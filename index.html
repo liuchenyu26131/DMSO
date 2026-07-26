@@ -157,7 +157,11 @@ function renderArticle(d){
    bodyHtml+='<img src="'+esc(src)+'" alt="" loading="lazy">\n';
   }else if(v.type=="video"){
    var lbl=v.label?"&#127916; "+esc(v.label):"";
-   bodyHtml+='<div class="video-placeholder">'+lbl+'</div>\n';
+   if(v.wechat_vid){
+    bodyHtml+='<div style="position:relative;width:100%;padding-bottom:56.25%;margin:16px 0;background:#000;border-radius:var(--radius);overflow:hidden"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://mp.weixin.qq.com/mp/readtemplate?t=pages/video_player_tmpl&action=mpvideo&auto=0&vid='+v.wechat_vid+'" frameborder="0" allowfullscreen></iframe></div>\n';
+   }else{
+    bodyHtml+='<div class="video-placeholder">'+lbl+'</div>\n';
+   }
   }else if(v.type=="quote"){
    bodyHtml+="<blockquote><p>"+rp(v.text)+"</p></blockquote>\n";
   }else if(v.type=="hr"){

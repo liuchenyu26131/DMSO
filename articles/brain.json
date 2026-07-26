@@ -82,9 +82,10 @@
     },
     {
       "type": "video",
-      "path": "videos/60e94962-2c39-4801-bc28-b5b980b766fc.mp4",
+      "path": "video/60e94962-2c39-4801-bc28-b5b980b766fc.mp4",
       "label": "1980年Mike Wallace DMSO新闻节目",
-      "transcript": ""
+      "transcript": "",
+      "wechat_vid": "wxv_4621806341773475841"
     },
     {
       "type": "pair",
@@ -123,9 +124,10 @@
     },
     {
       "type": "video",
-      "path": "videos/1ab8375f-a0da-4826-acff-cd4cba5cf549.mp4",
+      "path": "video/1ab8375f-a0da-4826-acff-cd4cba5cf549.mp4",
       "label": "ALS患者证言",
-      "transcript": ""
+      "transcript": "",
+      "wechat_vid": "wxv_4621807205044895744"
     },
     {
       "type": "pair",
