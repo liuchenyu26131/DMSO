@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMSO 文献 · 中英对照</title>
+<style>
+:root{--bg:#fafafa;--surface:#fff;--text:#1a1a2e;--text2:#555;--border:#e0e0e0;--accent:#2563eb;--accent-light:#dbeafe;--radius:8px;--shadow:0 1px 3px rgba(0,0,0,.08);--toc-w:260px;--ff:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--text2:#94a3b8;--border:#334155;--accent:#60a5fa;--accent-light:#1e3a5f;--shadow:0 1px 3px rgba(0,0,0,.3)}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+.app{display:flex;min-height:100vh}
+.sidebar{position:fixed;top:0;left:0;width:var(--toc-w);height:100vh;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:20px 0;z-index:100;transition:transform .3s}
+.sidebar-toggle{display:none;position:fixed;top:8px;left:8px;z-index:200;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:6px 10px;cursor:pointer;font-size:18px;color:var(--text)}
+.sidebar h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--text2);padding:0 16px 12px;border-bottom:1px solid var(--border);margin-bottom:8px}
+.sidebar nav a{display:block;padding:5px 16px;font-size:13px;color:var(--text2);text-decoration:none;border-left:2px solid transparent;transition:all .15s;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sidebar nav a:hover,.sidebar nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-light)}
+.sidebar nav a.h2{padding-left:16px}
+.sidebar nav a.h3{padding-left:28px;font-size:12px}
+.sidebar .back-link{padding:8px 16px 4px;font-size:13px}
+.sidebar .back-link a{color:var(--accent);text-decoration:none}
+.main{flex:1;margin-left:var(--toc-w);max-width:900px;padding:0}
+.list-page{padding:48px;max-width:700px;margin:0 auto}
+.list-page h1{font-size:28px;font-weight:700;margin-bottom:8px}
+.list-page .subtitle{font-size:16px;color:var(--text2);margin-bottom:32px}
+.article-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:16px;cursor:pointer;transition:all .2s;box-shadow:var(--shadow)}
+.article-card:hover{border-color:var(--accent)}
+.article-card h3{font-size:18px;font-weight:600;margin-bottom:4px;color:var(--accent)}
+.article-card .desc{font-size:14px;color:var(--text2);margin-bottom:6px}
+.article-card .meta-info{font-size:12px;color:var(--text2)}
+.page-header{padding:32px 48px 24px;border-bottom:1px solid var(--border);background:var(--surface)}
+.page-header h1{font-size:28px;font-weight:700;line-height:1.3;margin-bottom:4px}
+.page-header .subtitle{font-size:18px;color:var(--accent);margin-bottom:8px}
+.page-header .meta{font-size:13px;color:var(--text2)}
+.page-header .meta a{color:var(--accent)}
+.page-header .back{font-size:14px;margin-bottom:8px}
+.page-header .back a{color:var(--accent);text-decoration:none}
+.content{padding:32px 48px 80px}
+.content h2{font-size:22px;font-weight:700;margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--accent);scroll-margin-top:20px}
+.content h2 .zh{font-weight:400;font-size:18px;color:var(--text2)}
+.content h3{font-size:18px;font-weight:600;margin:28px 0 12px;scroll-margin-top:20px}
+.content h3 .zh{font-weight:400;font-size:15px;color:var(--text2)}
+.para-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:16px}
+.para-pair .en,.para-pair .cn{line-height:1.8}
+.para-pair .en{font-size:14px;color:var(--text)}
+.para-pair .en.has-cjk{font-size:17px}
+.para-pair .cn{font-size:18px;color:var(--text2)}
+sup[data-ref]{font-size:12px;font-weight:600;color:var(--accent);cursor:pointer;padding:0 2px}
+sup[data-ref]:hover{color:#1d4ed8;text-decoration:underline}
+.content img{max-width:100%;height:auto;border-radius:var(--radius);margin:20px 0;box-shadow:var(--shadow)}
+.video-placeholder{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);padding:24px;margin:16px 0;text-align:center;color:var(--text2);font-size:14px}
+blockquote{border-left:3px solid var(--accent);padding:8px 16px;margin:16px 0;background:var(--accent-light);border-radius:0 var(--radius) var(--radius) 0;font-size:14px;color:var(--text2)}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+.refs-section{margin-top:48px;padding-top:24px;border-top:2px solid var(--border)}
+.refs-section h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.refs-list{list-style:none;padding:0;font-size:13px;line-height:1.6}
+.refs-list li{padding:6px 0;border-bottom:1px solid var(--border);word-break:break-all}
+.refs-list .ref-num{display:inline-block;min-width:28px;font-weight:600;color:var(--accent)}
+.refs-list a{color:var(--accent);text-decoration:none}
+.ref-tooltip{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:10px 16px;font-size:13px;max-width:500px;word-break:break-all;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:999;display:none}
+.ref-tooltip.visible{display:block}
+.ref-tooltip a{color:var(--accent)}
+.page-hidden{display:none}
+@media(max-width:900px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.sidebar-toggle{display:block}.main{margin-left:0}.list-page{padding:24px}.page-header{padding:56px 24px 20px}.page-header h1{font-size:22px}.content{padding:24px 24px 60px}.para-pair{grid-template-columns:1fr;gap:4px;margin-bottom:20px}.para-pair .en{font-size:13px}.para-pair .cn{font-size:18px;padding-top:2px;border-top:1px dotted var(--border);margin-top:2px}}
+@media(max-width:600px){.list-page{padding:16px}.list-page h1{font-size:22px}.page-header{padding:48px 16px 16px}.page-header h1{font-size:18px}.content{padding:16px 16px 40px}.content h2{font-size:18px}.content h3{font-size:16px}.para-pair .en{font-size:13px}.para-pair .cn{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="app">
+<button class="sidebar-toggle" id="sidebarToggle">&#9776;</button>
+<aside class="sidebar" id="sidebar"><h2>目录</h2><div class="back-link" id="sidebarHome"><a href="#" onclick="showList();return false">&#8592; 文章列表</a></div><nav id="toc"></nav></aside>
+<main class="main">
+<div id="pageList" class="list-page"></div>
+<div id="pageArticle" class="page-hidden"></div>
+</main>
+</div>
+<div class="ref-tooltip" id="refTooltip"></div>
+<script>
+var INDEX_URLS=["data.json","https://liuchenyu26131.github.io/DMSO/data.json"];
+var ARTICLE_BASES=["articles","https://liuchenyu26131.github.io/DMSO/articles"];
+
+function getArticleId(){var m=location.search.match(/article=([^&]+)/);return m?m[1]:null;}
+
+function showList(){
+ history.replaceState(null,"",".");
+ document.getElementById("pageList").classList.remove("page-hidden");
+ document.getElementById("pageArticle").classList.add("page-hidden");
+ document.getElementById("sidebar").classList.remove("open");
+ document.getElementById("sidebarHome").style.display="block";
+}
+
+function showArticle(id){
+ var p=id?"?article="+id:".";
+ history.pushState(null,"",p);
+ loadArticle(id);
+}
+
+function renderList(data){
+ window._articleCache=window._articleCache||{};
+ var html='<h1>DMSO 文献库</h1><p class="subtitle">中英对照 · '+data.articles.length+' 篇</p>';
+ data.articles.forEach(function(a){
+  var label=a.label||a.title;
+  html+='<div class="article-card" onclick="showArticle(\''+a.id+'\')"><h3>'+esc(label)+'</h3><div class="desc">'+esc(a.description||"")+'</div><div class="meta-info">'+(a.published||"")+(a.author?" · "+esc(a.author):"")+" · "+(a.total_pairs||0)+" 段</div></div>";
+ });
+ document.getElementById("pageList").innerHTML=html;
+ document.getElementById("pageList").classList.remove("page-hidden");
+ document.getElementById("pageArticle").classList.add("page-hidden");
+ var aid=getArticleId();
+ if(aid) loadArticle(aid);
+}
+
+function loadArticle(id){
+ if(!id){showList();return}
+ var cache=window._articleCache||{};
+ if(cache[id]){renderArticle(cache[id]);restoreScroll();return}
+ (function tryLoad(i){
+  if(i>=ARTICLE_BASES.length){
+   document.getElementById("pageArticle").innerHTML='<div style="padding:40px;text-align:center"><h2>文章数据不可用</h2></div>';
+   document.getElementById("pageArticle").classList.remove("page-hidden");
+   document.getElementById("pageList").classList.add("page-hidden");
+   return;
+  }
+  fetch(ARTICLE_BASES[i]+"/"+encodeURIComponent(id)+".json").then(function(r){
+   if(!r.ok)throw Error(String(r.status));return r.json();
+  }).then(function(d){
+   cache[id]=d;renderArticle(d);restoreScroll();
+  }).catch(function(){tryLoad(i+1)});
+ })(0);
+}
+
+function renderArticle(d){
+ var meta=d.meta||{},c=d.content||[],r=d.references||[];
+ window._allRefs=r;
+ var ce=document.getElementById("pageArticle");
+ var html='<header class="page-header"><div class="back"><a href="#" onclick="showList();return false">&#8592; 文章列表</a></div><h1>'+esc(meta.title||"")+'</h1><div class="subtitle">'+esc(meta.description||"")+'</div><div class="meta"></div></header><div class="content"></div>';
+ ce.innerHTML=html;
+ var mh=[];
+ if(meta.author) mh.push("作者: "+meta.author);
+ if(meta.published) mh.push("发表于: "+meta.published);
+ if(meta.source) mh.push('<a href="'+esc(meta.source)+'" target="_blank">原文 &#8599;</a>');
+ ce.querySelector(".meta").innerHTML=mh.join(" · ");
+ var contentEl=ce.querySelector(".content");
+ var tocEl=document.getElementById("toc");
+ var tocHtml="",bodyHtml="",hc=0;
+ c.forEach(function(v){
+  if(v.type=="header"){
+   hc++;var slug="h-"+hc;
+   var cnHtml=v.cn?' <span class="zh">'+esc(v.cn)+"</span>":"";
+   bodyHtml+="<h"+(v.level||2)+' id="'+slug+'">'+esc(v.en)+cnHtml+"</h"+(v.level||2)+">\n";
+   tocHtml+='<a href="#'+slug+'" class="h'+(v.level||2)+'">'+esc(v.cn||v.en)+"</a>\n";
+  }else if(v.type=="pair"){
+   var e=rp(v.en),c2=rp(v.cn);
+   if(e||c2) bodyHtml+='<div class="para-pair"><div class="en">'+e+'</div><div class="cn">'+c2+"</div></div>\n";
+  }else if(v.type=="image"){
+   var src=v.local?String(v.local).replace(/\\\\/g,"/"):v.url;
+   bodyHtml+='<img src="'+esc(src)+'" alt="" loading="lazy">\n';
+  }else if(v.type=="video"){
+   var lbl=v.label?"&#127916; "+esc(v.label):"";
+   bodyHtml+='<div class="video-placeholder">'+lbl+'</div>\n';
+  }else if(v.type=="quote"){
+   bodyHtml+="<blockquote><p>"+rp(v.text)+"</p></blockquote>\n";
+  }else if(v.type=="hr"){
+   bodyHtml+="<hr>\n";
+  }
+ });
+ contentEl.innerHTML=bodyHtml;
+ tocEl.innerHTML=tocHtml;
+ fixCJK();
+ if(r.length){
+  var rh='<section class="refs-section"><h2>参考文献 ('+r.length+')</h2><ol class="refs-list">';
+  r.forEach(function(v){var u=v.url.length>80?v.url.slice(0,80)+"...":v.url;rh+='<li id="ref-'+v.id+'"><span class="ref-num">['+v.id+"]</span> <a href='"+esc(v.url)+"' target='_blank' rel='noopener'>"+esc(u)+"</a></li>"});
+  rh+="</ol></section>";
+  contentEl.insertAdjacentHTML("beforeend",rh);
+ }
+ document.querySelectorAll("sup[data-ref]").forEach(function(el){
+  el.addEventListener("click",function(e){
+   e.stopPropagation();
+   var id=this.getAttribute("data-ref"),ref=window._allRefs.find(function(x){return x.id==id});
+   if(!ref)return;
+   var tip=document.getElementById("refTooltip");
+   tip.innerHTML="<strong>["+id+"]</strong> <a href='"+esc(ref.url)+"' target='_blank'>"+esc(ref.url)+"</a>";
+   tip.classList.add("visible");
+   setTimeout(function(){tip.classList.remove("visible")},4000);
+  });
+ });
+ document.addEventListener("click",function(){document.getElementById("refTooltip").classList.remove("visible")});
+ document.getElementById("pageArticle").classList.remove("page-hidden");
+ document.getElementById("pageList").classList.add("page-hidden");
+ document.getElementById("sidebarHome").style.display="block";
+ // TOC scroll observer
+ var obs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+   if(e.isIntersecting){
+    document.querySelectorAll(".sidebar nav a").forEach(function(a){a.classList.remove("active")});
+    var link=document.querySelector('.sidebar nav a[href="#'+e.target.id+'"]');
+    if(link)link.classList.add("active");
+   }
+  });
+ },{rootMargin:"-80px 0px -60% 0px"});
+ document.querySelectorAll("h2,h3").forEach(function(el){obs.observe(el)});
+}
+
+function esc(s){if(!s)return "";return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function rp(t){if(!t)return "";return t.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>').replace(/\n/g,"<br>")}
+function fixCJK(){document.querySelectorAll(".para-pair .en").forEach(function(el){if(el.textContent.match(/[一-鿿]/))el.classList.add("has-cjk")})}
+// Scroll persistence
+function saveScroll(){try{localStorage.setItem("dmso_sp",String(window.scrollY||document.documentElement.scrollTop||0))}catch(e){}}
+function restoreScroll(){try{var p=localStorage.getItem("dmso_sp");if(p&&p!="0")setTimeout(function(){window.scrollTo(0,parseInt(p,10))},200)}catch(e){}}
+window.addEventListener("scroll",function(){clearTimeout(window._st);window._st=setTimeout(saveScroll,300)});
+document.getElementById("sidebarToggle").addEventListener("click",function(){document.getElementById("sidebar").classList.toggle("open")});
+document.getElementById("sidebar").addEventListener("click",function(){if(window.innerWidth<=900)document.getElementById("sidebar").classList.remove("open")});
+window.addEventListener("popstate",function(){var aid=getArticleId();if(aid)loadArticle(aid);else showList()});
+// Load index
+(function loadIndex(i){
+ if(i>=INDEX_URLS.length){
+  document.getElementById("pageList").innerHTML='<div style="padding:40px;text-align:center"><h2>无法加载</h2></div>';return;
+ }
+ fetch(INDEX_URLS[i]).then(function(r){if(!r.ok)throw Error(String(r.status));return r.json()}).then(renderList).catch(function(){loadIndex(i+1)});
+})(0);
+</script>
+</body>
+</html>
